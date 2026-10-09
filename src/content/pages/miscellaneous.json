@@ -1,0 +1,15 @@
+{
+  "path": "/contact/",
+  "title": "Contact",
+  "description": "",
+  "layout": "contact",
+  "blocks": [
+    {
+      "type": "richtext",
+      "html": "<p>Hi, How Are You?</p>"
+    },
+    {
+      "type": "contact-form"
+    }
+  ]
+}

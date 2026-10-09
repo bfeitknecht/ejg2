@@ -1,0 +1,12 @@
+{
+  "path": "/blog/",
+  "title": "EJG2 Blog",
+  "description": "",
+  "layout": "hub",
+  "blocks": [
+    {
+      "type": "richtext",
+      "html": "<P>Following is the thread for Oscars 2019. Good luck to all players!</P>"
+    }
+  ]
+}

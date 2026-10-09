@@ -1,0 +1,606 @@
+{
+  "path": "/oscars-2019/",
+  "title": "Oscars 2019 Leaderboard",
+  "description": "",
+  "layout": "gallery",
+  "images": [],
+  "blocks": [
+    {
+      "type": "image",
+      "src": "/img/1424625563128-AMY7CZAPMFKP4JS4LUL3/image-asset.png",
+      "alt": "",
+      "width": 1046,
+      "height": 312
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>It's a Wonderful Night for Oscar!</h2><h2>OSCARS 2019</h2><h4>The Awards up for grabs tonight:<br><br><strong>THE BIG FIVE<br></strong>(Correctly choose Best Picture, Best Director, Best Actor, Best Actress, and Best Screenplay, Original <em>or</em> Adapted.)<br><em>-</em><br><br><strong>EXECUTIVE PRODUCER</strong><br>(Most wins overall.)<br><em>ERNIE</em><br><br><strong>KEY GRIP</strong><br>(2nd place still gets you an award. Nice!)<br><em>ALTHEA<br>JAMI<br>RITA</em><br><br><strong>Grand Auteur</strong><br>(Sole winner in a single category.)<br><em>ERNIE - VISUAL EFFECTS<br>MATTEO - BEST DIRECTOR<br>MATTEO - BEST PICTURE</em><br><br><strong>IT'S AN HONOR TO BE NOMINATED</strong><br>(2nd to last place.)<br><em>HARRY</em><br><em>MARCY</em><br><br><strong>THE </strong><a href=\"https://en.wikipedia.org/wiki/Alan_Smithee\" target=\"_blank\" rel=\"noopener\"><strong>ALAN SMITHEE</strong></a><strong> AWARD</strong><br>(Last place. Formerly 'Best Loser'.)<br><em>TIM</em><br></h4>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<p><strong>Reminder: Refresh this page after every award for the latest updates!</strong></p>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>Blog</h2>"
+    },
+    {
+      "type": "richtext",
+      "html": "<p>Right-click to open this post in a new window and comment throughout the show.</p>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>LEADERBOARD</h2>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>ALTHEA - 11<br>ERNIE - 13<br>HARRY - 09<br>JAMI - 11<br>MARCY - 09<br>MATTEO - 10<br>RITA - 11<br>TIM - 05</h2>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>Players eligible for <em>Grand Auteur</em><br>(Sole winner in a single Category)</h2>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>BEST PICTURE</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550807472497-31BTAFAXP9DRHSDK32F9/Green+Book.jpg",
+      "alt": "Matteo",
+      "width": 400,
+      "height": 576,
+      "caption": "Matteo"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>BEST DIRECTOR</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550807514007-HDV6NU9S9581E7XQ12P9/Roma.jpg",
+      "alt": "Roma.jpg",
+      "width": 400,
+      "height": 561,
+      "caption": "Alfonso Cuaron Matteo"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>BEST VISUAL EFFECTS - FIRST MAN</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550809267137-D1BZ7TZ4IN0STCTXV1S9/First+Man.jpg",
+      "alt": "Ernie",
+      "width": 400,
+      "height": 576,
+      "caption": "Ernie"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>And the Oscar Goes to...</h2><h3>Best Picture</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550810684883-8IPY0VKH0YFQN61LCI7S/Green+Book.jpg",
+      "alt": "Matteo",
+      "width": 400,
+      "height": 576,
+      "caption": "Matteo"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Director</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550853680888-J52IV4O6JSJGY4DJV5K6/Roma.jpg",
+      "alt": "Roma.jpg",
+      "width": 400,
+      "height": 561,
+      "caption": "Alfonso Cuaron Matteo"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Actor</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550853874557-UDNZOQHH6HT0TJ4KCZIG/Bohemian+Rhapsody.jpg",
+      "alt": "Bohemian Rhapsody.jpg",
+      "width": 400,
+      "height": 576,
+      "caption": "Rami Malek AltheaErnieHarryJamiMarcyRita"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Actress</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1551067409995-Z5THYFTB5IOCMZTF04EL/The+Favourite.jpg",
+      "alt": "The Favourite.jpg",
+      "width": 400,
+      "height": 579,
+      "caption": "OLIVIA COLMAN"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Supporting Actor</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550855033458-T6IMDQLFUW93438Q3MDO/Green+Book.jpg",
+      "alt": "Green Book.jpg",
+      "width": 400,
+      "height": 576,
+      "caption": "Mahershala Ali AltheaJamiMatteo"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Supporting Actress - Regina King</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550856218986-F9G6AG2LJE1UYYK87R3Z/If+Beale+Street+Could+Talk.jpg",
+      "alt": "If Beale Street Could Talk.jpg",
+      "width": 200,
+      "height": 288,
+      "caption": "Regina King AltheaErnieJamiMatteo"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Animated Feature</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550856764104-3MBFGPQ2F0EI4DMI9XZE/Spider-Man.jpg",
+      "alt": "Althea Ernie Jami",
+      "width": 200,
+      "height": 290,
+      "caption": "AltheaErnieJami"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Foreign Film</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550856904434-VZ8SCC8OT7TGYH6DIIO6/Roma.jpg",
+      "alt": "Althea Harry Jami Marcy Rita Tim",
+      "width": 400,
+      "height": 561,
+      "caption": "AltheaHarryJamiMarcyRitaTim"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Original Screenplay</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550857395311-34Q0BD9HZFYSPGRU0GCQ/Green+Book.jpg",
+      "alt": "Marcy Rita",
+      "width": 400,
+      "height": 576,
+      "caption": "MarcyRita"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Adapted Screenplay</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550857755532-UP3LXSIWA9IJS31QAS7W/BlacKkKlansman.jpg",
+      "alt": "Althea Harry Tim",
+      "width": 400,
+      "height": 576,
+      "caption": "AltheaHarryTim"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Costume Design - BLACK PANTHER</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550857968135-764286OWBBYWMH37A0W0/Black+Panther.jpg",
+      "alt": "Althea Harry Matteo Rita Tim",
+      "width": 400,
+      "height": 576,
+      "caption": "AltheaHarryMatteoRitaTim"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Original Song</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550858192194-ZULWTXIA06WA8CHHPBTU/A+Star+Is+Born.jpg",
+      "alt": "A Star Is Born.jpg",
+      "width": 400,
+      "height": 568,
+      "caption": "“Shallow” ErnieHarryJamiMarcyRitaTim"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Original Score</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550858563960-A3IWFJRZFLKV0CYEHKVL/Black+Panther.jpg",
+      "alt": "Althea Ernie Harry Jami Rita",
+      "width": 400,
+      "height": 576,
+      "caption": "AltheaErnieHarryJamiRita"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Documentary Feature - FREE SOLO</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550858978956-UZ86FWXM3XF5WYGYFVPB/Free+Solo.jpg",
+      "alt": "Ernie Matteo",
+      "width": 200,
+      "height": 290,
+      "caption": "ErnieMatteo"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Documentary (Short)</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550944798372-GPAKXYF87R9E7XI01Z4I/Period+-+End+of+Sentence.jpg",
+      "alt": "Ernie Rita",
+      "width": 960,
+      "height": 1440,
+      "caption": "ErnieRita"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Makeup and Hair - VICE</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550944928428-7H88KO08JPZFS6Q222V6/Vice.jpg",
+      "alt": "Ernie Marcy Rita Tim",
+      "width": 400,
+      "height": 579,
+      "caption": "ErnieMarcyRitaTim"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Production Design</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550945350136-SPST1GIGU1CDK5JOZGKA/Black+Panther.jpg",
+      "alt": "Althea Ernie Harry Jami Rita",
+      "width": 400,
+      "height": 576,
+      "caption": "AltheaErnieHarryJamiRita"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Film Editing</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550945888779-LFOVS40LVYKHS3HJHK9B/Bohemian+Rhapsody.jpg",
+      "alt": "Althea Harry Marcy Rita",
+      "width": 400,
+      "height": 576,
+      "caption": "AltheaHarryMarcyRita"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Cinematography</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550946405684-M9DJEL3BVHHJPVU9ZI2J/Roma.jpg",
+      "alt": "Althea Ernie Jami Marcy Matteo",
+      "width": 400,
+      "height": 561,
+      "caption": "AltheaErnieJamiMarcyMatteo"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Sound Editing</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550946714814-CECQX5EJ0L4L2QQGW7BX/Bohemian+Rhapsody.jpg",
+      "alt": "Jami Marcy Matteo",
+      "width": 400,
+      "height": 576,
+      "caption": "JamiMarcyMatteo"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Sound Mixing</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550947853560-7MPPFC1JGEVFCVSY1S7N/Bohemian+Rhapsody.jpg",
+      "alt": "Jami Marcy Matteo",
+      "width": 400,
+      "height": 576,
+      "caption": "JamiMarcyMatteo"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Visual Effects</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550948301012-DMEV7SRG8U30D3A2RXER/First+Man.jpg",
+      "alt": "Ernie",
+      "width": 400,
+      "height": 576,
+      "caption": "Ernie"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Short Film (Animated)</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550949105644-B33R4N5WAJY4SEQWIYRV/Bao.jpg",
+      "alt": "Ernie Rita",
+      "width": 1442,
+      "height": 2048,
+      "caption": "ErnieRita"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>Best Short Film (Live)</h3>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1550950590164-NMHKHNMUG6X45ERPLY0X/Skin.jpg",
+      "alt": "Ernie Harry Matteo",
+      "width": 750,
+      "height": 970,
+      "caption": "ErnieHarryMatteo"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>91ST ANNUAL ACADEMY AWARD WINNERS</h2>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>BEST PICTURE<br>BEST DIRECTOR<br>BEST ACTOR<br>BEST ACTRESS<br>BEST SUPPORTING ACTOR<br>BEST SUPPORTING ACTRESS<br>BEST ANIMATED FEATURE<br>BEST FOREIGN FILM<br>BEST ORIGINAL SCREENPLAY<br>BEST ADAPTED SCREENPLAY<br>BEST COSTUME DESIGN<br>BEST ORIGINAL SONG<br>BEST ORIGINAL SCORE<br>BEST DOCUMENTARY FEATURE<br>BEST DOCUMENTARY (SHORT)<br>BEST MAKEUP AND HAIR<br>BEST PRODUCTION DESIGN<br>BEST FILM EDITING<br>BEST CINEMATOGRAPHY<br>BEST SOUND EDITING<br>BEST SOUND MIXING<br>BEST VISUAL EFFECTS<br>SHORT FILM (ANIMATED)<br>SHORT FILM (LIVE)</h4>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>GREEN BOOK<br>ALFONSO CUARON<br>RAMI MALEK<br>OLIVIA COLMAN<br>Regina King<br>MAHERSHALA ALI<br>SPIDER-MAN<br>ROMA<br>GREEN BOOK<br>BLACKKKLANSMAN<br>BLACK PANTHER<br>SHALLOW<br>BLACK PANTHER<br>Free Solo<br>PERIOD. END OF SENTENCE.<br>VICE<br>BLACK PANTHER<br>BOHEMIAN RHAPSODY<br>ROMA<br>ROMA<br>BOHEMIAN RHAPSODY<br>BOHEMIAN RHAPSODY<br>BAO<br>SKIN<br></h4>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2><strong>The Players</strong></h2>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>Althea</h2>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>BEST PICTURE<br>BEST DIRECTOR<br>BEST ACTOR<br>BEST ACTRESS<br>BEST SUPPORTING ACTOR<br>BEST SUPPORTING ACTRESS<br>ANIMATED FEATURE<br>FOREIGN FILM<br>ORIGINAL SCReeNPLAY<br>ADAPTED SCREENPLAY<br>COSTUME DESIGN<br>ORIGINAL SONG<br>ORIGINAL SCORE<br>DOCUMENTARY FEATURE<br>DOCUMENTARY (SHORT)<br>MAKEUP AND HAIRstyling<br>PRODUCTION DESIGN<br>FILM EDITING<br>CINEMATOGRAPHY<br>SOUND EDITING<br>SOUND MIXING<br>VISUAL EFFECTS<br>SHORT FILM (ANIMATED)<br>SHORT FILM (LIVE)</h4>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>BOHEMIAN RHAPSODY<br>SPIKE LEE<br>RAMI MALEK<br>LADY GAGA<br>MAHERSHALA ALI<br>REGINA KING<br>SPIDER-MAN<br>ROMA<br>ROMA<br>BlacKkKlansman<br>BLACK PANTHER<br>ALL THE STARS<br>BLACK PANTHER<br>MINDING THE GAP<br>END GAME<br>MARY QUEEN OF SCOTS<br>BLACK PANTHER<br>BOHEMIAN RHAPSODY<br>ROMA<br>BLACK PANTHER<br>BLACK PANTHER<br>AVENGERS: INFINITY WAR<br>WEEKENDS<br>MOTHER<br></h4>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>ERNIE</h2>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>BEST PICTURE<br>BEST DIRECTOR<br>BEST ACTOR<br>BEST ACTRESS<br>BEST SUPPORTING ACTOR<br>BEST SUPPORTING ACTRESS<br>ANIMATED FEATURE<br>FOREIGN FILM<br>ORIGINAL SCREENPLAY<br>ADAPTED SCREENPLAY<br>COSTUME DESIGN<br>ORIGINAL SONG<br>ORIGINAL SCORE<br>DOCUMENTARY FEATURE<br>DOCUMENTARY (SHORT)<br>MAKEUP AND HAIRSTYLING<br>PRODUCTION DESIGN<br>FILM EDITING<br>CINEMATOGRAPHY<br>SOUND EDITING<br>SOUND MIXING<br>VISUAL EFFECTS<br>SHORT FILM (ANIMATED)<br>SHORT FILM (LIVE)</h4>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>ROMA<br>SPIKE LEE<br>RAMI MALEK<br>GLENN CLOSE<br>RICHARD E. GRANT<br>REGINA KING<br>SPIDER-MAN<br>COLD WAR<br>FIRST REFORMED<br>IF BEALE STREET COULD TALK<br>THE FAVOURITE<br>SHALLOW<br>BLACK PANTHER<br>FREE SOLO<br>PERIOD. END OF SENTENCE.<br>VICE<br>BLACK PANTHER<br>BlacKkKlansman<br>ROMA<br>BLACK PANTHER<br>A STAR IS BORN<br>FIRST MAN<br>BAO<br>SKIN</h4>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>Harry</h2>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>BEST PICTURE<br>BEST DIRECTOR<br>BEST ACTOR<br>BEST ACTRESS<br>BEST SUPPORTING ACTOR<br>BEST SUPPORTING ACTRESS<br>ANIMATED FEATURE<br>FOREIGN FILM<br>ORIGINAL SCREENPLAY<br>ADAPTED SCREENPLAY<br>COSTUME DESIGN<br>ORIGINAL SONG<br>ORIGINAL SCORE<br>DOCUMENTARY FEATURE<br>DOCUMENTARY (SHORT)<br>MAKEUP AND HAIRSTYLING<br>PRODUCTION DESIGN<br>FILM EDITING<br>CINEMATOGRAPHY<br>SOUND EDITING<br>SOUND MIXING<br>VISUAL EFFECTS<br>SHORT FILM (ANIMATED)<br>SHORT FILM (LIVE)</h4>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>bohemian rhapsody<br>SPIKE LEE<br>RAMI MALEK<br>LADY GAGA<br>SAM ELLIOTT<br>RACHEL WEISZ<br>INCREDIBLES 2<br>ROMA<br>THE FAVOURITE<br>BlacKkKlansman<br>BLACK PANTHER<br>SHALLOW<br>BLACK PANTHER<br>OF FATHERS AND SONS<br>BLACK SHEEP<br>MARY QUEEN OF SCOTS<br>BLACK PANTHER<br>BOHEMIAN RHAPSODY<br>THE FAVOURITE<br>BLACK PANTHER<br>BLACK PANTHER<br>SOLO: A STAR WARS STORY<br>WEEKENDS<br>SKIN</h4>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>Jami</h2>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>BEST PICTURE<br>BEST DIRECTOR<br>BEST ACTOR<br>BEST ACTRESS<br>BEST SUPPORTING ACTOR<br>BEST SUPPORTING ACTRESS<br>ANIMATED FEATURE<br>FOREIGN FILM<br>ORIGINAL SCREENPLAY<br>ADAPTED SCREENPLAY<br>COSTUME DESIGN<br>ORIGINAL SONG<br>ORIGINAL SCORE<br>DOCUMENTARY FEATURE<br>DOCUMENTARY (SHORT)<br>MAKEUP AND HAIRSTYLING<br>PRODUCTION DESIGN<br>FILM EDITING<br>CINEMATOGRAPHY<br>SOUND EDITING<br>SOUND MIXING<br>VISUAL EFFECTS<br>SHORT FILM (ANIMATED)<br>SHORT FILM (LIVE)</h4>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>black panther<br>YORGOS LANTHIMOS<br>RAMI MALEK<br>GLENN CLOSE<br>MAHERSHALA ALI<br>REGINA KING<br>SPIDER-MAN<br>ROMA<br>THE FAVOURITE<br>IF BEALE STREET COULD TALK<br>THE FAVOURITE<br>SHALLOW<br>BLACK PANTHER<br>RBG<br>LIFEBOAT<br>MARY QUEEN OF SCOTS<br>BLACK PANTHER<br>VICE<br>ROMA<br>BOHEMIAN RHAPSODY<br>BOHEMIAN RHAPSODY<br>READY PLAYER ONE<br>LATE AFTERNOON<br>MARGUERITE</h4>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2><strong>Marcy</strong></h2>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>BEST PICTURE<br>BEST DIRECTOR<br>BEST ACTOR<br>BEST ACTRESS<br>BEST SUPPORTING ACTOR<br>BEST SUPPORTING ACTRESS<br>ANIMATED FEATURE<br>FOREIGN FILM<br>ORIGINAL SCREENPLAY<br>ADAPTED SCREENPLAY<br>COSTUME DESIGN<br>ORIGINAL SONG<br>ORIGINAL SCORE<br>DOCUMENTARY FEATURE<br>DOCUMENTARY (SHORT)<br>MAKEUP AND HAIRSTYLING<br>PRODUCTION DESIGN<br>FILM EDITING<br>CINEMATOGRAPHY<br>SOUND EDITING<br>SOUND MIXING<br>VISUAL EFFECTS<br>SHORT FILM (ANIMATED)<br>SHORT FILM (LIVE)</h4>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>A Star Is Born<br>SPIKE LEE<br>RAMI MALEK<br>YALITZA APARICIO<br>SAM ROCKWELL<br>EMMA STONE<br>ISLE OF DOGS<br>ROMA<br>GREEN BOOK<br>CAN YOU EVER FORGIVE ME?<br>MARY POPPINS RETURNS<br>SHALLOW<br>MARY POPPINS RETURNS<br>OF FATHERS AND SONS<br>LIFEBOAT<br>VICE<br>MARY POPPINS RETURNS<br>BOHEMIAN RHAPSODY<br>ROMA<br>BOHEMIAN RHAPSODY<br>BOHEMIAN RHAPSODY<br>SOLO: A STAR WARS STORY<br>ANIMAL BEHAVIOUR<br>MOTHER</h4>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2><strong>Matteo</strong></h2>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>BEST PICTURE<br>BEST DIRECTOR<br>BEST ACTOR<br>BEST ACTRESS<br>BEST SUPPORTING ACTOR<br>BEST SUPPORTING ACTRESS<br>ANIMATED FEATURE<br>FOREIGN FILM<br>ORIGINAL SCREENPLAY<br>ADAPTED SCREENPLAY<br>COSTUME DESIGN<br>ORIGINAL SONG<br>ORIGINAL SCORE<br>DOCUMENTARY FEATURE<br>DOCUMENTARY (SHORT)<br>MAKEUP AND HAIRSTYLING<br>PRODUCTION DESIGN<br>FILM EDITING<br>CINEMATOGRAPHY<br>SOUND EDITING<br>SOUND MIXING<br>VISUAL EFFECTS<br>SHORT FILM (ANIMATED)<br>SHORT FILM (LIVE)</h4>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>Green Book<br>ALFONSO CUARON<br>CHRISTIAN BALE<br>YALITZA APARICIO<br>MAHERSHALA ALI<br>REGINA KING<br>ISLE OF DOGS<br>CAPERNAUM<br>THE FAVOURITE<br>IF BEALE STREET COULD TALK<br>BLACK PANTHER<br>ALL THE STARS<br>IF BEALE STREET COULD TALK<br>FREE SOLO<br>BLACK SHEEP<br>MARY QUEEN OF SCOTS<br>THE FAVOURITE<br>THE FAVOURITE<br>ROMA<br>BOHEMIAN RHAPSODY<br>BOHEMIAN RHAPSODY<br>AVENGERS: INFINITY WAR<br>ANIMAL BEHAVIOUR<br>SKIN</h4>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>RITA</h2>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>BEST PICTURE<br>BEST DIRECTOR<br>BEST ACTOR<br>BEST ACTRESS<br>BEST SUPPORTING ACTOR<br>BEST SUPPORTING ACTRESS<br>ANIMATED FEATURE<br>FOREIGN FILM<br>ORIGINAL SCREENPLAY<br>ADAPTED SCREENPLAY<br>COSTUME DESIGN<br>ORIGINAL SONG<br>ORIGINAL SCORE<br>DOCUMENTARY FEATURE<br>DOCUMENTARY (SHORT)<br>MAKEUP AND HAIRSTYLING<br>PRODUCTION DESIGN<br>FILM EDITING<br>CINEMATOGRAPHY<br>SOUND EDITING<br>SOUND MIXING<br>VISUAL EFFECTS<br>SHORT FILM (ANIMATED)<br>SHORT FILM (LIVE)</h4>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>A Star Is Born<br>SPIKE LEE<br>RAMI MALEK<br>GLENN CLOSE<br>RICHARD E. GRANT<br>AMY ADAMS<br>ISLE OF DOGS<br>ROMA<br>GREEN BOOK<br>A STAR IS BORN<br>BLACK PANTHER<br>SHALLOW<br>BLACK PANTHER<br>RBG<br>PERIOD. END OF SENTENCE.<br>VICE<br>BLACK PANTHER<br>BOHEMIAN RHAPSODY<br>A STAR IS BORN<br>A QUIET PLACE<br>A STAR IS BORN<br>SOLO: A STAR WARS STORY<br>BAO<br>DETAINMENT</h4>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>Tim</h2>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>BEST PICTURE<br>BEST DIRECTOR<br>BEST ACTOR<br>BEST ACTRESS<br>BEST SUPPORTING ACTOR<br>BEST SUPPORTING ACTRESS<br>ANIMATED FEATURE<br>FOREIGN FILM<br>ORIGINAL SCREENPLAY<br>ADAPTED SCREENPLAY<br>COSTUME DESIGN<br>ORIGINAL SONG<br>ORIGINAL SCORE<br>DOCUMENTARY FEATURE<br>DOCUMENTARY (SHORT)<br>MAKEUP AND HAIRSTYLING<br>PRODUCTION DESIGN<br>FILM EDITING<br>CINEMATOGRAPHY<br>SOUND EDITING<br>SOUND MIXING<br>VISUAL EFFECTS<br>SHORT FILM (ANIMATED)<br>SHORT FILM (LIVE)</h4>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h4>BlacKkKlansman<br>Spike Lee<br>Bradley Cooper<br>LADY GAGA<br>SAM ROCKWELL<br>AMY ADAMS<br>INCREDIBLES 2<br>ROMA<br>VICE<br>BlacKkKlansman<br>BLACK PANTHER<br>SHALLOW<br>IF BEALE STREET COULD TALK<br>OF FATHERS AND SONS<br>END GAME<br>VICE<br>ROMA<br>GREEN BOOK<br>A STAR IS BORN<br>ROMA<br>A STAR IS BORN<br>AVENGERS: INFINITY WAR<br>ONE SMALL STEP<br>DETAINMENT</h4>"
+    },
+    {
+      "type": "hr"
+    }
+  ]
+}

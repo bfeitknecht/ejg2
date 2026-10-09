@@ -1,0 +1,13 @@
+{
+  "path": "/blog/oscars-2019/",
+  "title": "Oscars 2019",
+  "description": "",
+  "layout": "post",
+  "date": "2019-02-22",
+  "blocks": [
+    {
+      "type": "richtext",
+      "html": "<p>Following is the thread for Oscars 2019. Good luck to all players!</p>"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "path": "/video/",
+  "title": "Video",
+  "description": "",
+  "layout": "gallery",
+  "images": [],
+  "embeds": [
+    {
+      "provider": "youtube",
+      "id": "5mNixmV7vqY",
+      "title": "Closer to Mommie Dearest"
+    }
+  ]
+}

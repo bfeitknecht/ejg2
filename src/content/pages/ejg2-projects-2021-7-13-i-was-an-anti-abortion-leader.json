@@ -1,0 +1,25 @@
+{
+  "path": "/projects/i-was-an-anti-abortion-leader/",
+  "title": "I WAS AN ANTI-ABORTION LEADER…",
+  "description": "",
+  "layout": "post",
+  "date": "2020-09-21",
+  "category": "Graphic Design",
+  "blocks": [
+    {
+      "type": "richtext",
+      "html": "<p>Illustrated Article by Frank Schaeffer for distribution to media outlets during late 2020 Supreme Court nomination process.</p>"
+    },
+    {
+      "type": "image",
+      "src": "/img/1626233689447-NA6X03YKYZAIP0KD83E7/I+WAS+AN+ANTI-ABORTION+LEADER.png",
+      "alt": "I WAS AN ANTI-ABORTION LEADER.png",
+      "width": 1780,
+      "height": 1332
+    },
+    {
+      "type": "richtext",
+      "html": "<p><a href=\"/files/I-Was-An-Anti-Abortion-Leader-On-The-Religious-Right-Im-Pro-Choice-Now.pdf\">Download an Illustrated PDF of this Article</a></p>"
+    }
+  ]
+}

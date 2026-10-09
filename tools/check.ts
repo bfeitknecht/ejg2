@@ -1,17 +1,25 @@
 #!/usr/bin/env -S deno run --allow-read
-/** Verify the mirror: every local asset reference in HTML/CSS must resolve to a file.
- *  Reports un-rewritten Squarespace CDN references and leftover root-relative refs. */
+/**
+ * Verify the built site:
+ *  - every local reference in HTML/CSS resolves to a file
+ *  - no Squarespace domains are referenced anywhere in the output
+ *  - GitHub Pages config files exist
+ */
 
 const ROOT = new URL("../", import.meta.url).pathname;
 const missing = new Set<string>();
 const cdnRefs = new Map<string, Set<string>>();
-let rootRelative = 0;
 
 function* walk(dir: string): Generator<string> {
   for (const e of Deno.readDirSync(dir)) {
     const p = dir + "/" + e.name;
-    if (e.isDirectory) yield* walk(p);
-    else yield p;
+    if (e.isDirectory) {
+      if (
+        e.name === ".git" || e.name === ".legacy" ||
+        e.name === "node_modules" || e.name === "tools" || e.name === "src"
+      ) continue;
+      yield* walk(p);
+    } else yield p;
   }
 }
 
@@ -24,7 +32,9 @@ function exists(p: string): boolean {
   }
 }
 
-function resolve(dir: string, ref: string): string {
+function resolveLocal(dir: string, ref: string): string {
+  // root-absolute refs resolve against the site root (custom-domain deployment)
+  if (ref.startsWith("/")) dir = "";
   const parts = (dir === "" ? [] : dir.split("/")).concat(ref.split("/"));
   const out: string[] = [];
   for (const part of parts) {
@@ -40,40 +50,34 @@ function checkRef(file: string, dir: string, ref: string) {
     !ref || /^(https?:)?\/\//.test(ref) ||
     /^(data:|mailto:|tel:|#|javascript:)/.test(ref)
   ) return;
-  if (ref.startsWith("?") || ref.startsWith("#")) return; // query/filter links
-  if (ref.startsWith("/")) {
-    rootRelative++;
-    return;
-  }
-  ref = ref.split("?")[0].split("#")[0]; // strip query/fragment (font.eot?#iefix)
-  if (!exists(resolve(dir, ref))) missing.add(`${file} -> ${ref}`);
+  if (ref.startsWith("?") || ref.startsWith("#")) return;
+  const clean = ref.split("?")[0].split("#")[0];
+  if (!clean) return;
+  if (!exists(resolveLocal(dir, clean))) missing.add(`${file} -> ${ref}`);
 }
 
 for (const f of walk(ROOT)) {
-  if (!/\.(html|css)$/.test(f) || f.includes("/tools/")) continue;
   const rel = f.slice(ROOT.length);
   const dir = rel.slice(0, rel.lastIndexOf("/"));
-  const text = await Deno.readTextFile(f);
-
-  for (
-    const m of text.matchAll(
-      /(?:src|href|data-src|data-image|poster)=["']([^"']+)["']/g,
-    )
-  ) {
-    checkRef(rel, dir, m[1]);
-  }
-  for (const m of text.matchAll(/url\((['"]?)([^'")]+)\1\)/g)) {
-    checkRef(rel, dir, m[2]);
-  }
-  for (const m of text.matchAll(/srcset=["']([^"']+)["']/g)) {
-    for (const entry of m[1].split(",")) {
-      checkRef(rel, dir, entry.trim().split(/\s+/)[0]);
+  if (/\.(html|css|js)$/.test(f)) {
+    const text = await Deno.readTextFile(f);
+    for (const m of text.matchAll(/(?:src|href|poster)=["']([^"']+)["']/g)) {
+      checkRef(rel, dir, m[1]);
+    }
+    for (const m of text.matchAll(/url\((['"]?)([^'")]+)\1\)/g)) {
+      checkRef(rel, dir, m[2]);
+    }
+    for (const m of text.matchAll(/srcset=["']([^"']+)["']/g)) {
+      for (const entry of m[1].split(",")) {
+        checkRef(rel, dir, entry.trim().split(/\s+/)[0]);
+      }
     }
   }
   if (f.endsWith(".html")) {
+    const text = await Deno.readTextFile(f);
     for (
       const m of text.matchAll(
-        /(?:https?:)?\/\/(?:assets\.squarespace\.com|static1\.squarespace\.com|images\.squarespace-cdn\.com|file\.squarespace-cdn\.com)\/[^\s"'<>\\()]+/g,
+        /(?:https?:)?\/\/[a-z0-9.-]*squarespace[a-z0-9.-]*\.[a-z]{2,}[^\s"'<>\\()]*/gi,
       )
     ) {
       const set = cdnRefs.get(m[0]) ?? new Set();
@@ -83,18 +87,38 @@ for (const f of walk(ROOT)) {
   }
 }
 
-console.log(
-  missing.size === 0
-    ? "All local references resolve."
-    : `MISSING (${missing.size}):`,
-);
-for (const m of missing) console.log("  " + m);
-console.log(`Root-relative refs (fine on the custom domain): ${rootRelative}`);
-console.log(
-  cdnRefs.size === 0
-    ? "No un-rewritten Squarespace CDN refs in HTML."
-    : `Un-rewritten CDN refs (${cdnRefs.size}):`,
-);
-for (const [url, files] of cdnRefs) {
-  console.log(`  ${url}  [in ${files.size} page(s)]`);
+let ok = true;
+if (missing.size) {
+  ok = false;
+  console.log(`MISSING (${missing.size}):`);
+  for (const m of missing) console.log("  " + m);
+} else {
+  console.log("All local references resolve.");
 }
+if (cdnRefs.size) {
+  ok = false;
+  console.log(`SQUARESPACE REFS REMAIN (${cdnRefs.size}):`);
+  for (const [url, files] of cdnRefs) {
+    console.log(`  ${url} [${files.size} file(s)]`);
+  }
+} else {
+  console.log("No Squarespace references in output.");
+}
+for (
+  const f of [
+    "CNAME",
+    ".nojekyll",
+    "robots.txt",
+    "sitemap.xml",
+    "404.html",
+    "css/site.css",
+    "js/contact-form.js",
+  ]
+) {
+  if (!exists(ROOT + f)) {
+    ok = false;
+    console.log(`MISSING FILE: ${f}`);
+  }
+}
+if (!ok) Deno.exit(1);
+console.log("Check passed.");

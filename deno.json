@@ -1,0 +1,21 @@
+{
+  "lockfile": true,
+  "nodeModulesDir": "auto",
+  "tasks": {
+    "build": "deno run --allow-read --allow-write --allow-net --allow-env --allow-run tools/build.ts",
+    "extract": "deno run --allow-read --allow-write tools/extract.ts",
+    "check": "deno run --allow-read tools/check.ts",
+    "serve": "deno run --allow-read --allow-net tools/serve.ts"
+  },
+  "imports": {
+    "preact": "npm:preact@^10.25",
+    "preact/hooks": "npm:preact@^10.25/hooks",
+    "preact-render-to-string": "npm:preact-render-to-string@^6.5",
+    "htm": "npm:htm@^3.1",
+    "esbuild": "npm:esbuild@^0.25",
+    "linkedom": "npm:linkedom@^0.18"
+  },
+  "fmt": {
+    "include": ["src/", "tools/"]
+  }
+}

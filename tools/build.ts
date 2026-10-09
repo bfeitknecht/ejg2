@@ -1,0 +1,266 @@
+#!/usr/bin/env -S deno run --allow-read --allow-write --allow-net
+/**
+ * Static site generator for ejg2.com.
+ *
+ * Renders src/content/*.json through the Preact components in src/ into plain
+ * HTML at the repo root (GitHub Pages deploys from here), copies referenced
+ * assets out of the legacy mirror, bundles the contact-form island with esbuild,
+ * and emits the GitHub Pages config files.
+ *
+ * Usage: deno task build
+ */
+
+import esbuild from "esbuild";
+import { render } from "preact-render-to-string";
+import { loadPages, loadSite, type PageContent } from "../src/content.ts";
+import { Layout } from "../src/components/Layout.ts";
+import { ListingPage, PageRenderer } from "../src/components/pages.ts";
+import { html } from "../src/html.ts";
+
+const ROOT = new URL("../", import.meta.url).pathname;
+const LEGACY = new URL("../.legacy/", import.meta.url).pathname;
+
+const FINAL_HOST = "www.ejg2.com";
+
+async function writeText(rel: string, text: string) {
+  const p = ROOT + rel;
+  await Deno.mkdir(p.slice(0, p.lastIndexOf("/")), { recursive: true });
+  await Deno.writeTextFile(p, text);
+}
+
+async function copyAsset(legacyRel: string, dest: string): Promise<boolean> {
+  const src = LEGACY + legacyRel;
+  try {
+    const bytes = await Deno.readFile(src);
+    const out = ROOT + dest;
+    await Deno.mkdir(out.slice(0, out.lastIndexOf("/")), { recursive: true });
+    await Deno.writeFile(out, bytes);
+    return true;
+  } catch {
+    console.warn(`  missing legacy asset: ${legacyRel}`);
+    return false;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Render pages
+// ---------------------------------------------------------------------------
+
+const site = await loadSite();
+const extracted = await loadPages();
+
+interface Built {
+  path: string;
+  title: string;
+  description: string;
+}
+
+const built: Built[] = [];
+
+function renderPage(page: PageContent) {
+  const doc = "<!doctype html>\n" +
+    render(html`<${PageRenderer} site=${site} page=${page} />`);
+  const file = page.path === "/"
+    ? "index.html"
+    : page.path.replace(/^\/|\/$/g, "") + "/index.html";
+  return writeText(file, doc).then(() => {
+    built.push({
+      path: page.path,
+      title: page.title,
+      description: page.description,
+    });
+    console.log(`  ${page.path}`);
+  });
+}
+
+console.log("Rendering pages:");
+for (const page of extracted) {
+  await renderPage(page);
+}
+
+// Listing pages generated from post data (the legacy ones were dynamic).
+const projectPosts = extracted.filter((p) =>
+  p.layout === "post" && p.path.startsWith("/projects/")
+);
+const blogPosts = extracted.filter((p) =>
+  p.layout === "post" && p.path.startsWith("/blog/")
+);
+
+const generated: PageContent[] = [
+  {
+    path: "/projects/",
+    title: "Projects",
+    description: "Selected projects — print, digital, web and social.",
+    layout: "hub",
+  },
+  {
+    path: "/blog/",
+    title: "Blog",
+    description: "Occasional notes from EJG2.",
+    layout: "hub",
+  },
+];
+
+console.log("Rendering generated listings:");
+{
+  const projectsDesc = "Selected projects — print, digital, web and social.";
+  const doc = "<!doctype html>\n" + render(
+    html`
+      <${ListingPage}
+        site=${site}
+        path="/projects/"
+        title="Projects"
+        description=${projectsDesc}
+        posts=${projectPosts}
+        backLabel="Work"
+        backHref="/work/"
+      />
+    `,
+  );
+  await writeText("projects/index.html", doc);
+  built.push({
+    path: "/projects/",
+    title: "Projects",
+    description: projectsDesc,
+  });
+  console.log("  /projects/");
+}
+{
+  const blogDesc = "Occasional notes from EJG2.";
+  const doc = "<!doctype html>\n" + render(
+    html`
+      <${ListingPage}
+        site=${site}
+        path="/blog/"
+        title="Blog"
+        description=${blogDesc}
+        posts=${blogPosts}
+      />
+    `,
+  );
+  await writeText("blog/index.html", doc);
+  built.push({ path: "/blog/", title: "Blog", description: blogDesc });
+  console.log("  /blog/");
+}
+void generated;
+
+// ---------------------------------------------------------------------------
+// Assets
+// ---------------------------------------------------------------------------
+
+console.log("Copying assets:");
+const manifest = JSON.parse(
+  await Deno.readTextFile(
+    new URL("../src/content/assets-manifest.json", import.meta.url).pathname,
+  ),
+) as Record<string, { legacy: string; dest: string }>;
+
+let copied = 0;
+for (const entry of Object.values(manifest)) {
+  if (await copyAsset(entry.legacy, entry.dest)) copied++;
+}
+console.log(`  ${copied}/${Object.keys(manifest).length} assets copied`);
+
+await Deno.mkdir(ROOT + "css", { recursive: true });
+await Deno.copyFile(
+  new URL("../src/styles.css", import.meta.url).pathname,
+  ROOT + "css/site.css",
+);
+
+console.log("Bundling contact-form island:");
+await esbuild.build({
+  entryPoints: [
+    new URL("../src/islands/contact-form.ts", import.meta.url).pathname,
+  ],
+  bundle: true,
+  minify: true,
+  format: "iife",
+  target: "es2019",
+  outfile: ROOT + "js/contact-form.js",
+  logLevel: "warning",
+});
+await esbuild.stop();
+console.log("  js/contact-form.js");
+
+// ---------------------------------------------------------------------------
+// GitHub Pages config
+// ---------------------------------------------------------------------------
+
+const allPaths = built.map((b) => b.path);
+
+await writeText(
+  "sitemap.xml",
+  `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${
+    allPaths.map((p) => `  <url><loc>https://${FINAL_HOST}${p}</loc></url>`)
+      .join("\n")
+  }
+</urlset>
+`,
+);
+
+await writeText(
+  "robots.txt",
+  `User-agent: *\nAllow: /\n\nSitemap: https://${FINAL_HOST}/sitemap.xml\n`,
+);
+
+await writeText("CNAME", FINAL_HOST + "\n");
+await writeText(".nojekyll", "");
+
+// 404 page with client-side redirects for URLs that changed in the rebuild.
+const REDIRECTS: Record<string, string> = {
+  "/main": "/",
+  "/main/": "/",
+  "/miscellaneous": "/contact/",
+  "/miscellaneous/": "/contact/",
+  "/ejg2-projects": "/projects/",
+  "/ejg2-projects/": "/projects/",
+  "/ejg2-blog": "/blog/",
+  "/ejg2-blog/": "/blog/",
+  "/ejg2-projects/2021/7/13/i-was-an-anti-abortion-leader/":
+    "/projects/i-was-an-anti-abortion-leader/",
+  "/ejg2-projects/2021/7/13/in-conversation-with-frank-schaeffer/":
+    "/projects/in-conversation-with-frank-schaeffer/",
+  "/ejg2-projects/2023/1/19/love-in-common/": "/projects/love-in-common/",
+  "/ejg2-blog/2019/2/22/oscars-2019/": "/blog/oscars-2019/",
+};
+
+const notFoundNav = site.nav.map((n) => `<a href="${n.href}">${n.label}</a>`)
+  .join(" · ");
+await writeText(
+  "404.html",
+  `<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — EJG2</title>
+<link rel="stylesheet" href="/css/site.css">
+<script>
+(function () {
+  var REDIRECTS = ${JSON.stringify(REDIRECTS)};
+  var path = location.pathname.replace(/\\/+$/, "/");
+  if (REDIRECTS[path]) { location.replace(REDIRECTS[path]); return; }
+  if (/^\\/ejg2-projects\\//.test(path)) { location.replace("/projects/"); return; }
+  if (/^\\/ejg2-blog\\//.test(path)) { location.replace("/blog/"); return; }
+})();
+</script>
+</head>
+<body>
+<main class="site-main">
+  <article class="page">
+    <h1 class="page-title">Page not found</h1>
+    <p>The page you are looking for does not exist (or moved). Try one of these:</p>
+    <p>${notFoundNav}</p>
+    <p class="post-back"><a href="/">← Home</a></p>
+  </article>
+</main>
+</body>
+</html>
+`,
+);
+
+console.log(
+  `\nDone: ${built.length + 2} pages, ${copied} assets. Output: ${ROOT}`,
+);

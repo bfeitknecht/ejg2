@@ -1,0 +1,220 @@
+{
+  "path": "/mashups/",
+  "title": "Mashups",
+  "description": "",
+  "layout": "gallery",
+  "images": [
+    {
+      "src": "/img/1416701287752-WHJ7ZAW4UJOIT2TJHIWM/image-asset.png",
+      "alt": "Taylor Swift™"
+    },
+    {
+      "src": "/img/1416701343786-P7GRRCTRJPQA0A4AOEK4/Breto.png",
+      "alt": "Sex Symbol",
+      "width": 500,
+      "height": 632
+    },
+    {
+      "src": "/img/1406917984828-64DCER6O690PFH2UCAT4/MansonSelfie.gif",
+      "alt": "Selfie",
+      "width": 768,
+      "height": 432
+    },
+    {
+      "src": "/img/1409895617030-1CBUWB1J6YX6KBLLJIWU/image-asset.gif",
+      "alt": "Bitch",
+      "width": 878,
+      "height": 384
+    },
+    {
+      "src": "/img/1406917117015-DI2UQS0YTJLU4XW180LH/The80s.gif",
+      "alt": "The 80's",
+      "width": 254,
+      "height": 256
+    },
+    {
+      "src": "/img/1406916981540-PVTC6R3QPYZP3SH519O7/WarSquare.jpg",
+      "alt": "War Magazine",
+      "width": 575,
+      "height": 792
+    },
+    {
+      "src": "/img/1386267083448-6UEGCX5090CUDDYP95FJ/Playboy-Mickey.png",
+      "alt": "Icons of the 20th Century",
+      "width": 720,
+      "height": 720
+    },
+    {
+      "src": "/img/1396408359134-5HA64LG0T7J6IYT7B7OE/Sodom+%26+Gomorrah.jpg",
+      "alt": "Sodom & Gommorrah",
+      "width": 285,
+      "height": 392
+    },
+    {
+      "src": "/img/1382944937948-9Q8ALBEES6A91DXEBMDR/Jackie-Mo.jpg",
+      "alt": "M.O.",
+      "width": 2219,
+      "height": 2219
+    },
+    {
+      "src": "/img/1382944936563-0GOJ4L1VQ1AZNJI610PG/JFHO.jpg",
+      "alt": "Kennedy Oswald",
+      "width": 192,
+      "height": 192
+    },
+    {
+      "src": "/img/1382945010814-MPVX6ATAQMALLXCGG7WH/Hollow.jpg",
+      "alt": "Hollow",
+      "width": 1000,
+      "height": 1000
+    },
+    {
+      "src": "/img/1382944936872-X5AJEULLOBT2QQSQV7AR/Mammy-PoppinsEJG2.gif",
+      "alt": "Mammy Poppins",
+      "width": 864,
+      "height": 864
+    },
+    {
+      "src": "/img/1382944937088-8V2VGI79903K6S3EOTQD/Salvador-Dolly.gif",
+      "alt": "Salvador Dolly",
+      "width": 418,
+      "height": 421
+    },
+    {
+      "src": "/img/1382944937277-ZD8HLZ3NJLUQIL7EM456/Steve-Beatles.jpg",
+      "alt": "Steve Jobs Loves The Beatles",
+      "width": 360,
+      "height": 463
+    },
+    {
+      "src": "/img/1382944937744-CFO0Q06HTAN0M4TYSL7T/Wills%26Kate.jpg",
+      "alt": "A Royal Engagement",
+      "width": 652,
+      "height": 451
+    },
+    {
+      "src": "/img/1382944936327-WCU5XDL863UU9982A8J5/Freddie+Murphy+Final.jpg",
+      "alt": "Eddie Freddie",
+      "width": 2194,
+      "height": 1295
+    },
+    {
+      "src": "/img/1382944936336-SZKVXGCWELL6RCET5Z74/Beyarthur.gif",
+      "alt": "Beyarthür",
+      "width": 1506,
+      "height": 1800
+    },
+    {
+      "src": "/img/1382944937540-S4WWWP7K8VVBUN714Q1G/This_Means_War.jpg",
+      "alt": "Reese Who?",
+      "width": 800,
+      "height": 439
+    },
+    {
+      "src": "/img/1416701287752-WHJ7ZAW4UJOIT2TJHIWM/image-asset.png",
+      "alt": "Taylor Swift™"
+    },
+    {
+      "src": "/img/1416701343786-P7GRRCTRJPQA0A4AOEK4/Breto.png",
+      "alt": "Sex Symbol",
+      "width": 500,
+      "height": 632
+    },
+    {
+      "src": "/img/1406917984828-64DCER6O690PFH2UCAT4/MansonSelfie.gif",
+      "alt": "Selfie",
+      "width": 768,
+      "height": 432
+    },
+    {
+      "src": "/img/1409895617030-1CBUWB1J6YX6KBLLJIWU/image-asset.gif",
+      "alt": "Bitch",
+      "width": 878,
+      "height": 384
+    },
+    {
+      "src": "/img/1406917117015-DI2UQS0YTJLU4XW180LH/The80s.gif",
+      "alt": "The 80's",
+      "width": 254,
+      "height": 256
+    },
+    {
+      "src": "/img/1406916981540-PVTC6R3QPYZP3SH519O7/WarSquare.jpg",
+      "alt": "War Magazine",
+      "width": 575,
+      "height": 792
+    },
+    {
+      "src": "/img/1386267083448-6UEGCX5090CUDDYP95FJ/Playboy-Mickey.png",
+      "alt": "Icons of the 20th Century",
+      "width": 720,
+      "height": 720
+    },
+    {
+      "src": "/img/1396408359134-5HA64LG0T7J6IYT7B7OE/Sodom+%26+Gomorrah.jpg",
+      "alt": "Sodom & Gommorrah",
+      "width": 285,
+      "height": 392
+    },
+    {
+      "src": "/img/1382944937948-9Q8ALBEES6A91DXEBMDR/Jackie-Mo.jpg",
+      "alt": "M.O.",
+      "width": 2219,
+      "height": 2219
+    },
+    {
+      "src": "/img/1382944936563-0GOJ4L1VQ1AZNJI610PG/JFHO.jpg",
+      "alt": "Kennedy Oswald",
+      "width": 192,
+      "height": 192
+    },
+    {
+      "src": "/img/1382945010814-MPVX6ATAQMALLXCGG7WH/Hollow.jpg",
+      "alt": "Hollow",
+      "width": 1000,
+      "height": 1000
+    },
+    {
+      "src": "/img/1382944936872-X5AJEULLOBT2QQSQV7AR/Mammy-PoppinsEJG2.gif",
+      "alt": "Mammy Poppins",
+      "width": 864,
+      "height": 864
+    },
+    {
+      "src": "/img/1382944937088-8V2VGI79903K6S3EOTQD/Salvador-Dolly.gif",
+      "alt": "Salvador Dolly",
+      "width": 418,
+      "height": 421
+    },
+    {
+      "src": "/img/1382944937277-ZD8HLZ3NJLUQIL7EM456/Steve-Beatles.jpg",
+      "alt": "Steve Jobs Loves The Beatles",
+      "width": 360,
+      "height": 463
+    },
+    {
+      "src": "/img/1382944937744-CFO0Q06HTAN0M4TYSL7T/Wills%26Kate.jpg",
+      "alt": "A Royal Engagement",
+      "width": 652,
+      "height": 451
+    },
+    {
+      "src": "/img/1382944936327-WCU5XDL863UU9982A8J5/Freddie+Murphy+Final.jpg",
+      "alt": "Eddie Freddie",
+      "width": 2194,
+      "height": 1295
+    },
+    {
+      "src": "/img/1382944936336-SZKVXGCWELL6RCET5Z74/Beyarthur.gif",
+      "alt": "Beyarthür",
+      "width": 1506,
+      "height": 1800
+    },
+    {
+      "src": "/img/1382944937540-S4WWWP7K8VVBUN714Q1G/This_Means_War.jpg",
+      "alt": "Reese Who?",
+      "width": 800,
+      "height": 439
+    }
+  ]
+}

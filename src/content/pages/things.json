@@ -1,0 +1,91 @@
+{
+  "path": "/things/",
+  "title": "Things",
+  "description": "",
+  "layout": "page",
+  "blocks": [
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h3>BOOKS</h3>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>ECLECTICA</h2>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>FILM</h2>"
+    },
+    {
+      "type": "richtext",
+      "html": "<p>As close to perfect as comedy gets.<br> </p>"
+    },
+    {
+      "type": "richtext",
+      "html": "<p>\"Wildcat.\"<br> </p>"
+    },
+    {
+      "type": "richtext",
+      "html": "<p>This movie blows my mind. Barbara Jean is absolutely everything.</p>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<p>Alright, Alright, Alright.<br>What more is there to say about the ultimate teen comedy?<br> </p>"
+    },
+    {
+      "type": "richtext",
+      "html": "<p>Expertly blurs the very faint lines between truth and fiction. Plus, Robert Forster could have GOTTEN it back in the day.</p>"
+    },
+    {
+      "type": "richtext",
+      "html": "<p>Julianne Moore is a deity who will be worshipped by the future inhabitants of Earth.<br> </p>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<p>Revolutionary. Honestly. Caused quite a scandal at the time, you understand.</p>"
+    },
+    {
+      "type": "richtext",
+      "html": "<p>Dark. Comical. This is no dream, this is really happening!<br> </p>"
+    },
+    {
+      "type": "richtext",
+      "html": "<p>It's where we fell in love with Chloe and learned to hate what's her name.</p>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>VINYL</h2>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>HOME</h2>"
+    },
+    {
+      "type": "hr"
+    }
+  ]
+}

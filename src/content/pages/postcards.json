@@ -1,0 +1,30 @@
+{
+  "path": "/postcards/",
+  "title": "Postcards",
+  "description": "",
+  "layout": "page",
+  "blocks": [
+    {
+      "type": "richtext",
+      "html": "<h2>366<br>POSTCARDS SENT</h2>"
+    },
+    {
+      "type": "richtext",
+      "html": "<h2>133<br>POSTCARDS RECEIVED</h2>"
+    },
+    {
+      "type": "richtext",
+      "html": "<p><strong>UPDATE: I did it!</strong></p><p>It took me a year. It cost almost $250 in postage, but on 12/29/2104, I completed my 365 Postcards project.</p><p>I've made a couple new friends and reconnected with old ones.</p><p>I've sent and received cards from 37 countries. I've sent cards to 15 states and the District of Columbia.</p><p>I've gotten into at least one loud conversation with a surly postal worker (She totally started it).</p><p>Most importantly, I reached out, which is the point of our existence, and I couldn't be happier with the results.</p><p>Thank you to everyone who participated. I love you.</p>"
+    },
+    {
+      "type": "hr"
+    },
+    {
+      "type": "richtext",
+      "html": "<p>Hello! You've arrived here either because you've received a postcard or you've been drinking wine.<br><br>In either case - Welcome!</p><p>Here's what's going on...<br><br>I have been collecting postcards from here and there for over 20 years, and now I have lots. They aren't doing me any good just sitting in a box, so I've decided to send them out and share them with my friends and strangers.<br><br><strong>I will send at least one postcard for every day in 2014.</strong></p><p>In addition to using the service <a href=\"http://www.postcrossing.com\" target=\"_blank\" rel=\"noopener\">Postcrossing</a>, I will send cards to my friends in a sort of round-robin until I get more addresses. That's where you can help. If you know someone who needs to get a postcard, enter their address and I will add them to the list. If you want a postcard yourself, enter your info as well. I won't share your or your friend's info with anyone. That's gross.</p><p>Or, if you want to send me a postcard, go ahead.</p><p><strong>EJG2<br>P.O. BOX 1032<br>Laveen, AZ 85339</strong></p><p>TL;DR<br>I'm sending <em>at least</em> 365 postcards in 2014 and hope to receive some as well.</p>"
+    },
+    {
+      "type": "contact-form"
+    }
+  ]
+}

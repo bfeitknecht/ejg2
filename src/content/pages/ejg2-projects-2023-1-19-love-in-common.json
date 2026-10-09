@@ -1,0 +1,14 @@
+{
+  "path": "/projects/love-in-common/",
+  "title": "Love In Common",
+  "description": "",
+  "layout": "post",
+  "date": "2023-01-10",
+  "category": "Podcast",
+  "blocks": [
+    {
+      "type": "richtext",
+      "html": "<p>In 2023, I began co-hosting the Podcast, <em>Love In Common</em> with <a href=\"https://www.lovechildrenplanet.com\" target=\"_blank\" rel=\"noopener\">Frank Schaeffer</a> and <a href=\"https://www.erin-bagwell.com\" target=\"_blank\" rel=\"noopener\">Erin Bagwell</a>.</p>"
+    }
+  ]
+}

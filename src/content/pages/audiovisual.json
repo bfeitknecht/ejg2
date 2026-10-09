@@ -1,0 +1,28 @@
+{
+  "path": "/audiovisual/",
+  "title": "AV",
+  "description": "",
+  "layout": "hub",
+  "cards": [
+    {
+      "label": "Mashups",
+      "href": "/mashups/",
+      "img": "/img/1416701287752-WHJ7ZAW4UJOIT2TJHIWM/image-asset.png"
+    },
+    {
+      "label": "Sketch Of The Day",
+      "href": "/sketches/",
+      "img": "/img/1421521823717-L4UB007BB1XSWTWWXPUT/image-asset.png"
+    },
+    {
+      "label": "Stills",
+      "href": "/stills/",
+      "img": "/img/1420251843740-BAR8NYIR1WG2VR2CR4PK/100_1555.JPG"
+    },
+    {
+      "label": "Video",
+      "href": "/video/",
+      "img": "/img/1382856463598-K6DGXW1DLV9DXF0ZF6OK/image-asset.jpeg"
+    }
+  ]
+}

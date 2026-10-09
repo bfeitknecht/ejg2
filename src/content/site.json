@@ -1,0 +1,33 @@
+{
+  "title": "EJG2",
+  "tagline": "Print. Digital. Web. Social.",
+  "description": "Print. Digital. Web. Social.",
+  "logo": "/img/EJG2-Logo-1973.png",
+  "favicon": "/img/favicon.ico",
+  "coverBackground": "/img/1475289768202-33O4NNK2MVSSNU50HF7U/100_1555.JPG",
+  "email": "e@ejg2.com",
+  "address": [
+    "P.O. Box 1032",
+    "Laveen, AZ 85339",
+    "USA"
+  ],
+  "nav": [
+    {
+      "label": "Work",
+      "href": "/work/"
+    },
+    {
+      "label": "Projects",
+      "href": "/projects/"
+    },
+    {
+      "label": "Book",
+      "href": "/letter-to-lucy/"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact/"
+    }
+  ],
+  "formEndpoint": "https://formsubmit.co/ajax/e@ejg2.com"
+}
