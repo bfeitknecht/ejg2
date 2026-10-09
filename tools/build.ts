@@ -238,7 +238,9 @@ await writeText(
   `User-agent: *\nAllow: /\n\nSitemap: https://${FINAL_HOST}/sitemap.xml\n`,
 );
 
-await writeText("CNAME", FINAL_HOST + "\n");
+// No CNAME on purpose: the site previews at <user>.github.io/<repo>/ first.
+// When switching DNS to www.ejg2.com, add a CNAME file containing that domain
+// (or enter the domain in Settings → Pages).
 await writeText(".nojekyll", "");
 
 // 404 page with client-side redirects for URLs that changed in the rebuild.

@@ -44,9 +44,10 @@ The build is fully offline; nothing is fetched at build time.
 2. Repo **Settings → Pages** → Source: **Deploy from a branch** → `main` → `/ (root)`.
 3. Done — the site is live at `https://<username>.github.io/<repo>/` immediately.
    All paths are relative, so the preview works fully styled without any DNS.
-4. Later, when you want `www.ejg2.com`: **Settings → Pages → Custom domain**, enter
-   `www.ejg2.com` (matches the `CNAME` file), point DNS (table below), wait for the
-   check, then **Enforce HTTPS**. Nothing in the repo needs to change.
+4. Later, when the client signs off and you switch DNS to `www.ejg2.com`: add a
+   `CNAME` file containing `www.ejg2.com` (the build no longer emits one), enter
+   the domain in **Settings → Pages**, point DNS (table below), wait for the
+   check, then **Enforce HTTPS**.
 
 ## DNS records
 

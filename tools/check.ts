@@ -106,7 +106,6 @@ if (cdnRefs.size) {
 }
 for (
   const f of [
-    "CNAME",
     ".nojekyll",
     "robots.txt",
     "sitemap.xml",
