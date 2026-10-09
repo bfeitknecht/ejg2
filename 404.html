@@ -4,24 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found — EJG2</title>
-<link rel="stylesheet" href="/css/site.css">
+<style>
+body{margin:0;background:#fbfaf7;color:#22211f;line-height:1.65;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:4rem 1.25rem}
+h1{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:2rem;line-height:1.2;margin:0 0 1rem}
+a{color:#c74a32}.links a{margin-right:.75rem}.back{margin-top:2rem}
+</style>
 <script>
 (function () {
   var REDIRECTS = {"/main":"/","/main/":"/","/miscellaneous":"/contact/","/miscellaneous/":"/contact/","/ejg2-projects":"/projects/","/ejg2-projects/":"/projects/","/ejg2-blog":"/blog/","/ejg2-blog/":"/blog/","/ejg2-projects/2021/7/13/i-was-an-anti-abortion-leader/":"/projects/i-was-an-anti-abortion-leader/","/ejg2-projects/2021/7/13/in-conversation-with-frank-schaeffer/":"/projects/in-conversation-with-frank-schaeffer/","/ejg2-projects/2023/1/19/love-in-common/":"/projects/love-in-common/","/ejg2-blog/2019/2/22/oscars-2019/":"/blog/oscars-2019/"};
-  var path = location.pathname.replace(/\/+$/, "/");
-  if (REDIRECTS[path]) { location.replace(REDIRECTS[path]); return; }
-  if (/^\/ejg2-projects\//.test(path)) { location.replace("/projects/"); return; }
-  if (/^\/ejg2-blog\//.test(path)) { location.replace("/blog/"); return; }
+  function finish(base) {
+    var path = location.pathname.replace(/\/+$/, "/");
+    var target = REDIRECTS[path];
+    if (!target && /^\/ejg2-projects\//.test(path)) target = "/projects/";
+    if (!target && /^\/ejg2-blog\//.test(path)) target = "/blog/";
+    if (target) { location.replace(base + target); return; }
+    var links = document.querySelectorAll("a[data-root]");
+    for (var i = 0; i < links.length; i++) {
+      links[i].setAttribute("href", base + links[i].getAttribute("href"));
+    }
+  }
+  // On project previews the site lives under /<repo>/; probe for it.
+  var seg = location.pathname.split("/")[1] || "";
+  if (seg && seg !== "css" && seg !== "js" && seg !== "img" && seg !== "files") {
+    fetch(seg + "/css/site.css", { method: "HEAD" }).then(function (r) {
+      finish(r.ok ? "/" + seg : "");
+    }).catch(function () { finish(""); });
+  } else {
+    finish("");
+  }
 })();
 </script>
 </head>
 <body>
-<main class="site-main">
-  <article class="page">
-    <h1 class="page-title">Page not found</h1>
+<main>
+  <article>
+    <h1>Page not found</h1>
     <p>The page you are looking for does not exist (or moved). Try one of these:</p>
-    <p><a href="/work/">Work</a> · <a href="/projects/">Projects</a> · <a href="/letter-to-lucy/">Book</a> · <a href="/contact/">Contact</a></p>
-    <p class="post-back"><a href="/">← Home</a></p>
+    <p class="links"><a data-root href="/work/">Work</a> · <a data-root href="/projects/">Projects</a> · <a data-root href="/letter-to-lucy/">Book</a> · <a data-root href="/contact/">Contact</a></p>
+    <p class="back"><a data-root href="/">← Home</a></p>
   </article>
 </main>
 </body>

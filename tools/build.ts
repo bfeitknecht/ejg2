@@ -57,9 +57,36 @@ interface Built {
 
 const built: Built[] = [];
 
+/** Rewrite root-absolute refs to paths relative to the page's depth, so the
+ *  built site works at any base URL (github.io project preview AND the root
+ *  custom domain). Canonical/og URLs stay absolute on purpose. */
+function relativize(doc: string, depth: number): string {
+  const prefix = "../".repeat(depth);
+  const home = prefix === "" ? "./" : prefix;
+  return doc
+    .replace(
+      /(src|href|poster)="\/((?:img|files|css|js)\/)/g,
+      (m, attr, dir) => `${attr}="${prefix}${dir}`,
+    )
+    .replace(
+      /(src|href|poster)='\/((?:img|files|css|js)\/)/g,
+      (m, attr, dir) => `${attr}='${prefix}${dir}`,
+    )
+    .replace(
+      /url\((['"])\/((?:img|files|css|js)\/)/g,
+      (m, q, dir) => `url(${q}${prefix}${dir}`,
+    )
+    .replace(/href="\/"/g, `href="${home}"`)
+    .replace(/href="\/([a-z0-9-]+\/)/g, (m, seg) => `href="${prefix}${seg}`);
+}
+
 function renderPage(page: PageContent) {
-  const doc = "<!doctype html>\n" +
-    render(html`<${PageRenderer} site=${site} page=${page} />`);
+  const depth = page.path.split("/").filter(Boolean).length;
+  const doc = relativize(
+    "<!doctype html>\n" +
+      render(html`<${PageRenderer} site=${site} page=${page} />`),
+    depth,
+  );
   const file = page.path === "/"
     ? "index.html"
     : page.path.replace(/^\/|\/$/g, "") + "/index.html";
@@ -104,18 +131,21 @@ const generated: PageContent[] = [
 console.log("Rendering generated listings:");
 {
   const projectsDesc = "Selected projects — print, digital, web and social.";
-  const doc = "<!doctype html>\n" + render(
-    html`
-      <${ListingPage}
-        site=${site}
-        path="/projects/"
-        title="Projects"
-        description=${projectsDesc}
-        posts=${projectPosts}
-        backLabel="Work"
-        backHref="/work/"
-      />
-    `,
+  const doc = relativize(
+    "<!doctype html>\n" + render(
+      html`
+        <${ListingPage}
+          site=${site}
+          path="/projects/"
+          title="Projects"
+          description=${projectsDesc}
+          posts=${projectPosts}
+          backLabel="Work"
+          backHref="/work/"
+        />
+      `,
+    ),
+    1,
   );
   await writeText("projects/index.html", doc);
   built.push({
@@ -127,16 +157,19 @@ console.log("Rendering generated listings:");
 }
 {
   const blogDesc = "Occasional notes from EJG2.";
-  const doc = "<!doctype html>\n" + render(
-    html`
-      <${ListingPage}
-        site=${site}
-        path="/blog/"
-        title="Blog"
-        description=${blogDesc}
-        posts=${blogPosts}
-      />
-    `,
+  const doc = relativize(
+    "<!doctype html>\n" + render(
+      html`
+        <${ListingPage}
+          site=${site}
+          path="/blog/"
+          title="Blog"
+          description=${blogDesc}
+          posts=${blogPosts}
+        />
+      `,
+    ),
+    1,
   );
   await writeText("blog/index.html", doc);
   built.push({ path: "/blog/", title: "Blog", description: blogDesc });
@@ -226,7 +259,13 @@ const REDIRECTS: Record<string, string> = {
   "/ejg2-blog/2019/2/22/oscars-2019/": "/blog/oscars-2019/",
 };
 
-const notFoundNav = site.nav.map((n) => `<a href="${n.href}">${n.label}</a>`)
+// 404.html is served at the URL that 404'd, so relative refs would resolve
+// against an unknown depth. Keep refs root-absolute and detect the site base
+// at runtime (works both on username.github.io/<repo>/ and on the custom
+// domain), with inline styles so the page never renders unstyled.
+const notFoundNav = site.nav.map((n) =>
+  `<a data-root href="${n.href}">${n.label}</a>`
+)
   .join(" · ");
 await writeText(
   "404.html",
@@ -236,24 +275,45 @@ await writeText(
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found — EJG2</title>
-<link rel="stylesheet" href="/css/site.css">
+<style>
+body{margin:0;background:#fbfaf7;color:#22211f;line-height:1.65;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:4rem 1.25rem}
+h1{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:2rem;line-height:1.2;margin:0 0 1rem}
+a{color:#c74a32}.links a{margin-right:.75rem}.back{margin-top:2rem}
+</style>
 <script>
 (function () {
   var REDIRECTS = ${JSON.stringify(REDIRECTS)};
-  var path = location.pathname.replace(/\\/+$/, "/");
-  if (REDIRECTS[path]) { location.replace(REDIRECTS[path]); return; }
-  if (/^\\/ejg2-projects\\//.test(path)) { location.replace("/projects/"); return; }
-  if (/^\\/ejg2-blog\\//.test(path)) { location.replace("/blog/"); return; }
+  function finish(base) {
+    var path = location.pathname.replace(/\\/+$/, "/");
+    var target = REDIRECTS[path];
+    if (!target && /^\\/ejg2-projects\\//.test(path)) target = "/projects/";
+    if (!target && /^\\/ejg2-blog\\//.test(path)) target = "/blog/";
+    if (target) { location.replace(base + target); return; }
+    var links = document.querySelectorAll("a[data-root]");
+    for (var i = 0; i < links.length; i++) {
+      links[i].setAttribute("href", base + links[i].getAttribute("href"));
+    }
+  }
+  // On project previews the site lives under /<repo>/; probe for it.
+  var seg = location.pathname.split("/")[1] || "";
+  if (seg && seg !== "css" && seg !== "js" && seg !== "img" && seg !== "files") {
+    fetch(seg + "/css/site.css", { method: "HEAD" }).then(function (r) {
+      finish(r.ok ? "/" + seg : "");
+    }).catch(function () { finish(""); });
+  } else {
+    finish("");
+  }
 })();
 </script>
 </head>
 <body>
-<main class="site-main">
-  <article class="page">
-    <h1 class="page-title">Page not found</h1>
+<main>
+  <article>
+    <h1>Page not found</h1>
     <p>The page you are looking for does not exist (or moved). Try one of these:</p>
-    <p>${notFoundNav}</p>
-    <p class="post-back"><a href="/">← Home</a></p>
+    <p class="links">${notFoundNav}</p>
+    <p class="back"><a data-root href="/">← Home</a></p>
   </article>
 </main>
 </body>
